@@ -35,9 +35,10 @@ class MyModel {
 
         // Helper function to convert CGImage to CVPixelBuffer
     private func pixelBuffer(from image: CGImage) throws -> CVPixelBuffer {
-        let targetSize = CGSize(width: 28, height: 28)  // Set the target size
+        let targetSize = CGSize(width: 28, height: 28)
 
-        guard let resizedImage = image.resize(to: targetSize) else {
+        guard let resizedImage = image.resize(to: targetSize),
+              let normalizedImage = resizeToPixelValues(resizedImage) else {
             throw NSError(domain: "com.example.MyModel", code: 1, userInfo: nil)
         }
 
@@ -70,10 +71,29 @@ class MyModel {
                                 space: CGColorSpaceCreateDeviceGray(),
                                 bitmapInfo: CGImageAlphaInfo.none.rawValue)
 
-        context?.draw(resizedImage, in: CGRect(x: 0, y: 0, width: targetSize.width, height: targetSize.height))
+        context?.draw(normalizedImage, in: CGRect(x: 0, y: 0, width: targetSize.width, height: targetSize.height))
         CVPixelBufferUnlockBaseAddress(buffer, [])
 
         return buffer
+    }
+
+    private func resizeToPixelValues(_ image: CGImage) -> CGImage? {
+        let context = CGContext(data: nil,
+                                width: image.width,
+                                height: image.height,
+                                bitsPerComponent: 8,
+                                bytesPerRow: 0,
+                                space: CGColorSpaceCreateDeviceGray(),
+                                bitmapInfo: CGImageAlphaInfo.none.rawValue)
+
+        context?.draw(image, in: CGRect(x: 0, y: 0, width: image.width, height: image.height))
+
+        // Normalize pixel values
+        guard let normalizedImage = context?.makeImage() else {
+            return nil
+        }
+
+        return normalizedImage
     }
 
     
