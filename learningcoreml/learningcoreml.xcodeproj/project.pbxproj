@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0601B9772B60A811006715B7 /* MNISTClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0601B9762B60A811006715B7 /* MNISTClassifier.mlmodel */; };
+		0601B9792B60A917006715B7 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0601B9782B60A917006715B7 /* MyModel.swift */; };
 		06A2DAC62B609E8B00E56F98 /* learningcoremlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2DAC52B609E8B00E56F98 /* learningcoremlApp.swift */; };
 		06A2DAC82B609E8B00E56F98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2DAC72B609E8B00E56F98 /* ContentView.swift */; };
 		06A2DACA2B609E8C00E56F98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A2DAC92B609E8C00E56F98 /* Assets.xcassets */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0601B9762B60A811006715B7 /* MNISTClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNISTClassifier.mlmodel; sourceTree = "<group>"; };
+		0601B9782B60A917006715B7 /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
+		0601B97A2B60B724006715B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		06A2DAC22B609E8B00E56F98 /* learningcoreml.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learningcoreml.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A2DAC52B609E8B00E56F98 /* learningcoremlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learningcoremlApp.swift; sourceTree = "<group>"; };
 		06A2DAC72B609E8B00E56F98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,10 +99,13 @@
 		06A2DAC42B609E8B00E56F98 /* learningcoreml */ = {
 			isa = PBXGroup;
 			children = (
+				0601B97A2B60B724006715B7 /* Info.plist */,
+				0601B9762B60A811006715B7 /* MNISTClassifier.mlmodel */,
 				06A2DAC52B609E8B00E56F98 /* learningcoremlApp.swift */,
 				06A2DAC72B609E8B00E56F98 /* ContentView.swift */,
 				06A2DAC92B609E8C00E56F98 /* Assets.xcassets */,
 				06A2DACB2B609E8C00E56F98 /* Preview Content */,
+				0601B9782B60A917006715B7 /* MyModel.swift */,
 			);
 			path = learningcoreml;
 			sourceTree = "<group>";
@@ -259,6 +267,8 @@
 			files = (
 				06A2DAC82B609E8B00E56F98 /* ContentView.swift in Sources */,
 				06A2DAC62B609E8B00E56F98 /* learningcoremlApp.swift in Sources */,
+				0601B9772B60A811006715B7 /* MNISTClassifier.mlmodel in Sources */,
+				0601B9792B60A917006715B7 /* MyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,11 +435,14 @@
 				DEVELOPMENT_TEAM = HFFR92H89Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = learningcoreml/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera will be used";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,11 +467,14 @@
 				DEVELOPMENT_TEAM = HFFR92H89Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = learningcoreml/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera will be used";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
